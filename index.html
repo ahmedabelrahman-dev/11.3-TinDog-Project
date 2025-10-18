@@ -4,7 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TinDog</title>
+  <meta name="description"
+    content="TinDog - The ultimate dating app for dogs. Meet new and interesting dogs nearby. Find your dog's best friend today!">
+  <meta property="og:title" content="TinDog - Dating App for Dogs">
+  <meta property="og:description"
+    content="Meet new and interesting dogs nearby. Find your dog's best friend with TinDog.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./images/dog-img.jpg">
+  <title>TinDog - Dating App for Dogs</title>
+  <link rel="icon" type="image/svg+xml" href="./svg/apple.svg">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -41,17 +49,104 @@
     width: 3rem;
     height: 3rem;
     border-radius: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .icon-square:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .pricing-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-card {
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .download-btn {
+    transition: all 0.3s ease;
+  }
+
+  .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff4c68;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 76, 104, 0.3);
   }
 </style>
 
 <body>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-bold text-gray-800">TinDog</div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#features" class="text-gray-600 hover:text-gray-800 transition">Features</a>
+          <a href="#testimonial" class="text-gray-600 hover:text-gray-800 transition">Testimonials</a>
+          <a href="#pricing" class="text-gray-600 hover:text-gray-800 transition">Pricing</a>
+          <a href="#footer" class="text-gray-600 hover:text-gray-800 transition">Contact</a>
+        </div>
+        <div class="md:hidden">
+          <button class="text-gray-600 hover:text-gray-800">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <!-- Title -->
-  <section id="title" class="gradient-background">
+  <section id="title" class="gradient-background pt-20">
     <div class="max-w-6xl mx-auto pt-10 px-4">
       <div class="flex flex-col-reverse lg:flex-row items-center gap-10 pt-10">
         <div class="w-full lg:w-1/2 flex justify-center">
-          <img src="./images/iphone.png" alt="iphone" class="w-60 h-auto mb-0 rounded-xl shadow-lg" loading="lazy" />
+          <img src="./images/iphone.png" alt="TinDog app interface on iPhone showing dog profiles"
+            class="w-60 h-auto mb-0 rounded-xl shadow-lg" loading="lazy" />
         </div>
         <div class="w-full lg:w-1/2">
           <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">Meet new and interesting dogs
@@ -59,12 +154,12 @@
           <p class="text-lg text-white/80 mb-6">Find your dog's best friend with TinDog.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <button type="button"
-              class="flex items-center gap-2 bg-white text-blue-500 font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-100 transition">
-              <img src="./svg/apple.svg" height="20" /> Download
+              class="download-btn flex items-center gap-2 bg-white text-blue-500 font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-100 transition">
+              <img src="./svg/apple.svg" alt="Apple App Store" height="20" /> Download
             </button>
             <button type="button"
-              class="flex items-center gap-2 border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-blue-500 transition">
-              <img src="./svg/google-play.svg" height="20" /> Download
+              class="download-btn flex items-center gap-2 border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-blue-500 transition">
+              <img src="./svg/google-play.svg" alt="Google Play Store" height="20" /> Download
             </button>
           </div>
         </div>
@@ -75,27 +170,27 @@
   <section id="features" class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div class="flex items-start gap-4">
+        <div class="feature-card flex items-start gap-4">
           <div class="icon-square bg-blue-100 flex items-center justify-center text-blue-500 shadow-lg">
-            <img src="./svg/check2-circle.svg" class="w-9 h-9" />
+            <img src="./svg/check2-circle.svg" alt="Easy to use checkmark" class="w-9 h-9" />
           </div>
           <div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">Easy to use.</h3>
             <p class="text-gray-600">So easy to use, even your dog could do it.</p>
           </div>
         </div>
-        <div class="flex items-start gap-4">
+        <div class="feature-card flex items-start gap-4">
           <div class="icon-square bg-pink-100 flex items-center justify-center text-pink-500 shadow-lg">
-            <img src="./svg/mortarboard.svg" class="w-9 h-9" />
+            <img src="./svg/mortarboard.svg" alt="Elite clientele graduation cap" class="w-9 h-9" />
           </div>
           <div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">Elite Clientele.</h3>
             <p class="text-gray-600">We have all the dogs, the greatest dogs.</p>
           </div>
         </div>
-        <div class="flex items-start gap-4">
+        <div class="feature-card flex items-start gap-4">
           <div class="icon-square bg-red-100 flex items-center justify-center text-red-500 shadow-lg">
-            <img src="./svg/arrow-through-heart.svg" class="w-9 h-9" />
+            <img src="./svg/arrow-through-heart.svg" alt="Guaranteed to work heart" class="w-9 h-9" />
           </div>
           <div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">Guaranteed to work.</h3>
@@ -110,13 +205,13 @@
     <div class="max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-8">"I no longer have to sniff other dogs for love.
         I've found the hottest Corgi on TinDog. Woof."</h2>
-      <img class="dog mx-auto" src="./images/dog-img.jpg" alt="dog">
+      <img class="dog mx-auto" src="./images/dog-img.jpg" alt="Happy dog named Pebbles from New York">
       <p class="text-lg text-gray-600 mt-4 mb-8">Pebbles, New York</p>
       <div class="flex justify-center items-center gap-8 flex-wrap">
-        <img src="./images/bizinsider.png" alt="bizinsider" class="h-8" />
-        <img src="./images/techcrunch.png" alt="techcrunch" class="h-8" />
-        <img src="./images/mashable.png" alt="mashable" class="h-8" />
-        <img src="./images/tnw.png" alt="tnw" class="h-8" />
+        <img src="./images/bizinsider.png" alt="Business Insider logo" class="h-8" />
+        <img src="./images/techcrunch.png" alt="TechCrunch logo" class="h-8" />
+        <img src="./images/mashable.png" alt="Mashable logo" class="h-8" />
+        <img src="./images/tnw.png" alt="The Next Web logo" class="h-8" />
       </div>
     </div>
   </section>
@@ -127,40 +222,40 @@
         <p class="text-lg text-gray-500">Simple and affordable price plans for you and your dog.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 rounded-xl shadow p-8 flex flex-col items-center">
-          <h4 class="text-xl font-semibold mb-2">Free</h4>
+        <div class="pricing-card bg-gray-50 rounded-xl shadow p-8 flex flex-col items-center">
+          <h4 class="text-xl font-semibold mb-2">Chihuahua</h4>
           <h1 class="text-4xl font-bold mb-2">$0<span class="text-gray-400 text-lg font-light">/mo</span></h1>
           <ul class="mb-6 text-gray-600 space-y-2">
-            <li>10 users included</li>
-            <li>2 GB of storage</li>
-            <li>Email support</li>
-            <li>Help center access</li>
+            <li>5 Matches Per Day</li>
+            <li>10 Messages Per Day</li>
+            <li>Unlimited App Usage</li>
+            <li>Basic Profile Setup</li>
           </ul>
           <button
             class="w-full bg-white border border-gray-800 text-gray-800 font-semibold py-2 rounded-lg hover:bg-gray-100 transition">Sign
             up for free</button>
         </div>
-        <div class="bg-blue-50 rounded-xl shadow p-8 flex flex-col items-center">
-          <h4 class="text-xl font-semibold mb-2">Pro</h4>
+        <div class="pricing-card bg-blue-50 rounded-xl shadow p-8 flex flex-col items-center">
+          <h4 class="text-xl font-semibold mb-2">Labrador</h4>
           <h1 class="text-4xl font-bold mb-2">$15<span class="text-gray-400 text-lg font-light">/mo</span></h1>
           <ul class="mb-6 text-gray-600 space-y-2">
-            <li>20 users included</li>
-            <li>10 GB of storage</li>
-            <li>Priority email support</li>
-            <li>Help center access</li>
+            <li>Unlimited Matches</li>
+            <li>Unlimited Messages</li>
+            <li>Unlimited App Usage</li>
+            <li>Advanced Filters</li>
           </ul>
           <button class="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition">Get
             started</button>
         </div>
-        <div class="bg-gray-900 rounded-xl shadow p-8 flex flex-col items-center">
-          <h4 class="text-xl font-semibold text-white mb-2">Enterprise</h4>
+        <div class="pricing-card bg-gray-900 rounded-xl shadow p-8 flex flex-col items-center">
+          <h4 class="text-xl font-semibold text-white mb-2">Mastiff</h4>
           <h1 class="text-4xl font-bold text-white mb-2">$29<span class="text-gray-400 text-lg font-light">/mo</span>
           </h1>
           <ul class="mb-6 text-gray-300 space-y-2">
-            <li>30 users included</li>
-            <li>15 GB of storage</li>
-            <li>Phone and email support</li>
-            <li>Help center access</li>
+            <li>Priority Listing</li>
+            <li>Unlimited Matches & Messages</li>
+            <li>Unlimited App Usage</li>
+            <li>Premium Support</li>
           </ul>
           <button
             class="w-full bg-white text-gray-900 font-semibold py-2 rounded-lg hover:bg-gray-200 transition">Contact
@@ -180,29 +275,75 @@
         </div>
         <div></div>
         <div>
-          <h5 class="text-white font-semibold mb-4">Section</h5>
+          <h5 class="text-white font-semibold mb-4">Product</h5>
           <ul class="space-y-2">
-            <li><a href="#" class="text-white/80 hover:text-white transition">Home</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">Features</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">Pricing</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">FAQs</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">About</a></li>
+            <li><a href="#features" class="text-white/80 hover:text-white transition">Features</a></li>
+            <li><a href="#pricing" class="text-white/80 hover:text-white transition">Pricing</a></li>
+            <li><a href="#testimonial" class="text-white/80 hover:text-white transition">Testimonials</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white transition">Download</a></li>
           </ul>
         </div>
         <div>
-          <h5 class="text-white font-semibold mb-4">Section</h5>
+          <h5 class="text-white font-semibold mb-4">Support</h5>
           <ul class="space-y-2">
-            <li><a href="#" class="text-white/80 hover:text-white transition">Home</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">Features</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">Pricing</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">FAQs</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">About</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white transition">Help Center</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white transition">Contact Us</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white transition">Terms of Service</a></li>
           </ul>
         </div>
       </div>
     </footer>
   </section>
-  <!-- Bootstrap JS removed -->
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" onclick="scrollToTop()">
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+    </svg>
+  </div>
+
+  <script>
+    // Back to top functionality
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Show/hide back to top button
+    window.addEventListener('scroll', function () {
+      const backToTop = document.querySelector('.back-to-top');
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Mobile menu toggle (basic implementation)
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuButton = document.querySelector('.md\\:hidden button');
+      const mobileMenu = document.createElement('div');
+      mobileMenu.className = 'md:hidden bg-white shadow-lg absolute top-full left-0 right-0 z-50';
+      mobileMenu.innerHTML = `
+        <div class="px-4 py-2 space-y-2">
+          <a href="#features" class="block text-gray-600 hover:text-gray-800 py-2">Features</a>
+          <a href="#testimonial" class="block text-gray-600 hover:text-gray-800 py-2">Testimonials</a>
+          <a href="#pricing" class="block text-gray-600 hover:text-gray-800 py-2">Pricing</a>
+          <a href="#footer" class="block text-gray-600 hover:text-gray-800 py-2">Contact</a>
+        </div>
+      `;
+
+      mobileMenuButton.parentNode.appendChild(mobileMenu);
+      mobileMenu.style.display = 'none';
+
+      mobileMenuButton.addEventListener('click', function () {
+        mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+  </script>
 </body>
 
 </html>
