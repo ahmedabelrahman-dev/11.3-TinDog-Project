@@ -2,348 +2,136 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="TinDog - The ultimate dating app for dogs. Meet new and interesting dogs nearby. Find your dog's best friend today!">
-  <meta property="og:title" content="TinDog - Dating App for Dogs">
-  <meta property="og:description"
-    content="Meet new and interesting dogs nearby. Find your dog's best friend with TinDog.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="./images/dog-img.jpg">
-  <title>TinDog - Dating App for Dogs</title>
-  <link rel="icon" type="image/svg+xml" href="./svg/apple.svg">
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEN20 – Meet, Match, Connect</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<style>
-  .gradient-background {
-    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
-    background-size: 180% 180%;
-    animation: gradient-animation 18s ease infinite;
-  }
-
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .dog {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .icon-square {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 0.75rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .icon-square:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .pricing-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-
-  .feature-card {
-    transition: transform 0.3s ease;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-3px);
-  }
-
-  .download-btn {
-    transition: all 0.3s ease;
-  }
-
-  .download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #ff4c68;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-  }
-
-  .back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .back-to-top:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 76, 104, 0.3);
-  }
-</style>
 
 <body>
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-4">
-      <div class="flex justify-between items-center">
-        <div class="text-2xl font-bold text-gray-800">TinDog</div>
-        <div class="hidden md:flex space-x-8">
-          <a href="#features" class="text-gray-600 hover:text-gray-800 transition">Features</a>
-          <a href="#testimonial" class="text-gray-600 hover:text-gray-800 transition">Testimonials</a>
-          <a href="#pricing" class="text-gray-600 hover:text-gray-800 transition">Pricing</a>
-          <a href="#footer" class="text-gray-600 hover:text-gray-800 transition">Contact</a>
-        </div>
-        <div class="md:hidden">
-          <button class="text-gray-600 hover:text-gray-800">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="logo" href="#">
+        <i class="bi bi-stars"></i> TEN20
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Stories</a></li>
+        <li><a href="#pricing">Plans</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-toggle"><i class="bi bi-list"></i></div>
     </div>
   </nav>
 
-  <!-- Title -->
-  <section id="title" class="gradient-background pt-20">
-    <div class="max-w-6xl mx-auto pt-10 px-4">
-      <div class="flex flex-col-reverse lg:flex-row items-center gap-10 pt-10">
-        <div class="w-full lg:w-1/2 flex justify-center">
-          <img src="./images/iphone.png" alt="TinDog app interface on iPhone showing dog profiles"
-            class="w-60 h-auto mb-0 rounded-xl shadow-lg" loading="lazy" />
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <!-- Left Text -->
+      <div class="hero-left">
+        <h1>Meet, Match & Connect</h1>
+        <p>TEN20 is your modern dating platform. Connect with real people nearby and find your perfect match.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary"><i class="bi bi-apple"></i> Download</button>
+          <button class="btn-outline"><i class="bi bi-google-play"></i> Get it on Play</button>
         </div>
-        <div class="w-full lg:w-1/2">
-          <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">Meet new and interesting dogs
-            nearby.</h1>
-          <p class="text-lg text-white/80 mb-6">Find your dog's best friend with TinDog.</p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <button type="button"
-              class="download-btn flex items-center gap-2 bg-white text-blue-500 font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-100 transition">
-              <img src="./svg/apple.svg" alt="Apple App Store" height="20" /> Download
-            </button>
-            <button type="button"
-              class="download-btn flex items-center gap-2 border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-blue-500 transition">
-              <img src="./svg/google-play.svg" alt="Google Play Store" height="20" /> Download
-            </button>
-          </div>
+      </div>
+
+      <!-- Right Images -->
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1590080870323-12f6221d0b7e?auto=format&fit=crop&w=500&q=80"
+          alt="Couple 1" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=500&q=80"
+          alt="Couple 2" class="hero-img overlapping">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="container features-container">
+      <div class="feature">
+        <div class="icon"><i class="bi bi-heart-fill"></i></div>
+        <h4>Smart Matching</h4>
+        <p>Our algorithm connects you with people who share your vibe and values.</p>
+      </div>
+      <div class="feature">
+        <div class="icon"><i class="bi bi-shield-lock-fill"></i></div>
+        <h4>Privacy First</h4>
+        <p>Your conversations and data stay secure, always.</p>
+      </div>
+      <div class="feature">
+        <div class="icon"><i class="bi bi-geo-alt-fill"></i></div>
+        <h4>Meet Nearby</h4>
+        <p>Find and connect with real people around you effortlessly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container text-center">
+      <h2>What Our Users Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="">
+          <p>"I met my partner on TEN20 — we instantly clicked!"</p>
+          <em>Sarah, Dubai</em>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="">
+          <p>"Real people, real vibes. This app feels genuine."</p>
+          <em>Omar, London</em>
         </div>
       </div>
     </div>
   </section>
-  <!-- Features -->
-  <section id="features" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div class="feature-card flex items-start gap-4">
-          <div class="icon-square bg-blue-100 flex items-center justify-center text-blue-500 shadow-lg">
-            <img src="./svg/check2-circle.svg" alt="Easy to use checkmark" class="w-9 h-9" />
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Easy to use.</h3>
-            <p class="text-gray-600">So easy to use, even your dog could do it.</p>
-          </div>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing-section">
+    <div class="container text-center">
+      <h2>Choose Your Plan</h2>
+      <div class="pricing-cards">
+        <div class="card">
+          <h4>Free</h4>
+          <p>Explore and connect with nearby users.</p>
+          <h3>$0</h3>
+          <button class="btn-outline">Get Started</button>
         </div>
-        <div class="feature-card flex items-start gap-4">
-          <div class="icon-square bg-pink-100 flex items-center justify-center text-pink-500 shadow-lg">
-            <img src="./svg/mortarboard.svg" alt="Elite clientele graduation cap" class="w-9 h-9" />
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Elite Clientele.</h3>
-            <p class="text-gray-600">We have all the dogs, the greatest dogs.</p>
-          </div>
+        <div class="card">
+          <h4>Plus</h4>
+          <p>Unlimited swipes, ad-free experience.</p>
+          <h3>$9.99/mo</h3>
+          <button class="btn-primary">Upgrade</button>
         </div>
-        <div class="feature-card flex items-start gap-4">
-          <div class="icon-square bg-red-100 flex items-center justify-center text-red-500 shadow-lg">
-            <img src="./svg/arrow-through-heart.svg" alt="Guaranteed to work heart" class="w-9 h-9" />
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Guaranteed to work.</h3>
-            <p class="text-gray-600">Find the love of your dog's life or your money back.</p>
-          </div>
+        <div class="card">
+          <h4>Premium</h4>
+          <p>Boost visibility, message anyone instantly.</p>
+          <h3>$19.99/mo</h3>
+          <button class="btn-primary">Go Premium</button>
         </div>
       </div>
     </div>
   </section>
-  <!-- Testimonial -->
-  <section id="testimonial" class="bg-gray-100 py-16">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-8">"I no longer have to sniff other dogs for love.
-        I've found the hottest Corgi on TinDog. Woof."</h2>
-      <img class="dog mx-auto" src="./images/dog-img.jpg" alt="Happy dog named Pebbles from New York">
-      <p class="text-lg text-gray-600 mt-4 mb-8">Pebbles, New York</p>
-      <div class="flex justify-center items-center gap-8 flex-wrap">
-        <img src="./images/bizinsider.png" alt="Business Insider logo" class="h-8" />
-        <img src="./images/techcrunch.png" alt="TechCrunch logo" class="h-8" />
-        <img src="./images/mashable.png" alt="Mashable logo" class="h-8" />
-        <img src="./images/tnw.png" alt="The Next Web logo" class="h-8" />
-      </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container text-center">
+      <p>&copy; 2025 TEN20 — Where real connections start ❤️‍🔥</p>
+      <p><a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Support</a></p>
     </div>
-  </section>
-  <section id="pricing" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">A Plan for Every Dog's Needs</h2>
-        <p class="text-lg text-gray-500">Simple and affordable price plans for you and your dog.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="pricing-card bg-gray-50 rounded-xl shadow p-8 flex flex-col items-center">
-          <h4 class="text-xl font-semibold mb-2">Chihuahua</h4>
-          <h1 class="text-4xl font-bold mb-2">$0<span class="text-gray-400 text-lg font-light">/mo</span></h1>
-          <ul class="mb-6 text-gray-600 space-y-2">
-            <li>5 Matches Per Day</li>
-            <li>10 Messages Per Day</li>
-            <li>Unlimited App Usage</li>
-            <li>Basic Profile Setup</li>
-          </ul>
-          <button
-            class="w-full bg-white border border-gray-800 text-gray-800 font-semibold py-2 rounded-lg hover:bg-gray-100 transition">Sign
-            up for free</button>
-        </div>
-        <div class="pricing-card bg-blue-50 rounded-xl shadow p-8 flex flex-col items-center">
-          <h4 class="text-xl font-semibold mb-2">Labrador</h4>
-          <h1 class="text-4xl font-bold mb-2">$15<span class="text-gray-400 text-lg font-light">/mo</span></h1>
-          <ul class="mb-6 text-gray-600 space-y-2">
-            <li>Unlimited Matches</li>
-            <li>Unlimited Messages</li>
-            <li>Unlimited App Usage</li>
-            <li>Advanced Filters</li>
-          </ul>
-          <button class="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition">Get
-            started</button>
-        </div>
-        <div class="pricing-card bg-gray-900 rounded-xl shadow p-8 flex flex-col items-center">
-          <h4 class="text-xl font-semibold text-white mb-2">Mastiff</h4>
-          <h1 class="text-4xl font-bold text-white mb-2">$29<span class="text-gray-400 text-lg font-light">/mo</span>
-          </h1>
-          <ul class="mb-6 text-gray-300 space-y-2">
-            <li>Priority Listing</li>
-            <li>Unlimited Matches & Messages</li>
-            <li>Unlimited App Usage</li>
-            <li>Premium Support</li>
-          </ul>
-          <button
-            class="w-full bg-white text-gray-900 font-semibold py-2 rounded-lg hover:bg-gray-200 transition">Contact
-            us</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="footer" class="gradient-background">
-    <footer class="max-w-6xl mx-auto px-4 py-12 border-t border-white/20">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        <div>
-          <a href="/" class="flex items-center mb-4" aria-label="TinDog">
-            <svg width="40" height="32" aria-hidden="true" class="text-white"><!-- logo placeholder --></svg>
-          </a>
-          <p class="text-white/80">© TinDog 2025</p>
-        </div>
-        <div></div>
-        <div>
-          <h5 class="text-white font-semibold mb-4">Product</h5>
-          <ul class="space-y-2">
-            <li><a href="#features" class="text-white/80 hover:text-white transition">Features</a></li>
-            <li><a href="#pricing" class="text-white/80 hover:text-white transition">Pricing</a></li>
-            <li><a href="#testimonial" class="text-white/80 hover:text-white transition">Testimonials</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">Download</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-white font-semibold mb-4">Support</h5>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-white/80 hover:text-white transition">Help Center</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">Contact Us</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">Privacy Policy</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </section>
+  </footer>
 
-  <!-- Back to Top Button -->
-  <div class="back-to-top" onclick="scrollToTop()">
-    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
-    </svg>
-  </div>
-
-  <script>
-    // Back to top functionality
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-
-    // Show/hide back to top button
-    window.addEventListener('scroll', function () {
-      const backToTop = document.querySelector('.back-to-top');
-      if (window.pageYOffset > 300) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-
-    // Mobile menu toggle (basic implementation)
-    document.addEventListener('DOMContentLoaded', function () {
-      const mobileMenuButton = document.querySelector('.md\\:hidden button');
-      const mobileMenu = document.createElement('div');
-      mobileMenu.className = 'md:hidden bg-white shadow-lg absolute top-full left-0 right-0 z-50';
-      mobileMenu.innerHTML = `
-        <div class="px-4 py-2 space-y-2">
-          <a href="#features" class="block text-gray-600 hover:text-gray-800 py-2">Features</a>
-          <a href="#testimonial" class="block text-gray-600 hover:text-gray-800 py-2">Testimonials</a>
-          <a href="#pricing" class="block text-gray-600 hover:text-gray-800 py-2">Pricing</a>
-          <a href="#footer" class="block text-gray-600 hover:text-gray-800 py-2">Contact</a>
-        </div>
-      `;
-
-      mobileMenuButton.parentNode.appendChild(mobileMenu);
-      mobileMenu.style.display = 'none';
-
-      mobileMenuButton.addEventListener('click', function () {
-        mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
-      });
-    });
-  </script>
 </body>
 
 </html>
