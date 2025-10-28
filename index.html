@@ -6,39 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TEN20 – Meet, Match, Connect</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="container">
       <a class="logo" href="#">
         <i class="bi bi-stars"></i> TEN20
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#features">Features</a></li>
         <li><a href="#testimonials">Stories</a></li>
         <li><a href="#pricing">Plans</a></li>
         <li><a href="#footer">Contact</a></li>
       </ul>
-      <div class="mobile-menu-toggle"><i class="bi bi-list"></i></div>
+      <div class="mobile-menu-toggle" onclick="toggleMenu()"><i class="bi bi-list"></i></div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container hero-grid">
-      <!-- Left Text -->
-      <div class="hero-left">
+      <div class="hero-left centered-text">
         <h1>Meet, Match & Connect</h1>
         <p>TEN20 is your modern dating platform. Connect with real people nearby and find your perfect match.</p>
         <div class="hero-buttons">
@@ -47,17 +41,14 @@
         </div>
       </div>
 
-      <!-- Right Images -->
       <div class="hero-right">
-        <img src="https://images.unsplash.com/photo-1590080870323-12f6221d0b7e?auto=format&fit=crop&w=500&q=80"
-          alt="Couple 1" class="hero-img">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=500&q=80"
-          alt="Couple 2" class="hero-img overlapping">
+        <img src="./images/image-4.webp" alt="Couple 1" class="hero-img">
+        <img src="./images/image-1.avif" alt="Couple 2" class="hero-img overlapping-1">
+        <img src="./images/image-3.webp" alt="Couple 3" class="hero-img overlapping-2">
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
   <section id="features" class="features-section">
     <div class="container features-container">
       <div class="feature">
@@ -78,7 +69,6 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section id="testimonials" class="testimonials-section">
     <div class="container text-center">
       <h2>What Our Users Say</h2>
@@ -97,7 +87,6 @@
     </div>
   </section>
 
-  <!-- Pricing -->
   <section id="pricing" class="pricing-section">
     <div class="container text-center">
       <h2>Choose Your Plan</h2>
@@ -124,13 +113,19 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer id="footer">
     <div class="container text-center">
       <p>&copy; 2025 TEN20 — Where real connections start ❤️‍🔥</p>
       <p><a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Support</a></p>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 
 </body>
 
